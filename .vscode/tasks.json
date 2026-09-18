@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "C/C++: g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-std=c++20",
+        "-g",
+        "${fileDirname}/*.cpp",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.out",
+        "-I${env:HOME}/vcpkg/installed/x64-linux/include",
+        "-L${env:HOME}/vcpkg/installed/x64-linux/lib",
+        "-lSDL3",
+        "-lSDL3_image",
+        "-lGLEW",
+        "-lGL"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Compiler task configured for vcpkg libraries"
+    }
+  ]
+}

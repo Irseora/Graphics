@@ -1,0 +1,55 @@
+# ===================================
+# Build artifacts & executables
+# ===================================
+# CMake build output directory
+build/
+build*/
+bin/
+out/
+
+# Compiled Linux binaries (no extension) and object files
+*.o
+*.obj
+*.so
+*.a
+*.out
+
+# Ignore binary executables generated alongside .cpp files
+*.out
+
+# ===================================
+# Visual Studio / Windows artifacts
+# ===================================
+.vs/
+*.sln.docstates
+*.user
+*.vcxproj.user
+*.aps
+*.opendb
+*.db
+*.ipch
+Debug/
+Release/
+x64/
+x86/
+
+# ===================================
+# VS Code user-specific workspace
+# ===================================
+# Keep tasks.json, launch.json, and settings.json tracked if sharing,
+# but ignore user history, local state, and compile flags caches
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/c_cpp_properties.json
+
+# ===================================
+# OS & System Junk
+# ===================================
+.DS_Store
+Thumbs.db
+*.log
+
+*.pdf
+*.docx
