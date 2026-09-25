@@ -9,11 +9,21 @@
         "-fdiagnostics-color=always",
         "-std=c++20",
         "-g",
+        "-DGLM_ENABLE_EXPERIMENTAL",
         "${fileDirname}/*.cpp",
+        "${fileDirname}/includes/*.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}.out",
+
+        // Includes
         "-I${env:HOME}/vcpkg/installed/x64-linux/include",
+        "-I${env:HOME}/vcpkg/installed/x64-linux/include/imgui",
+
+        // Library search path
         "-L${env:HOME}/vcpkg/installed/x64-linux/lib",
+
+        // Libraries to link
+        "-limgui",
         "-lSDL3",
         "-lSDL3_image",
         "-lGLEW",
