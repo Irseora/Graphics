@@ -4,31 +4,7 @@
     {
       "type": "shell",
       "label": "C/C++: g++ build active file",
-      "command": "/usr/bin/g++",
-      "args": [
-        "-fdiagnostics-color=always",
-        "-std=c++20",
-        "-g",
-        "-DGLM_ENABLE_EXPERIMENTAL",
-        "${fileDirname}/*.cpp",
-        "${fileDirname}/includes/*.cpp",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}.out",
-
-        // Includes
-        "-I${env:HOME}/vcpkg/installed/x64-linux/include",
-        "-I${env:HOME}/vcpkg/installed/x64-linux/include/imgui",
-
-        // Library search path
-        "-L${env:HOME}/vcpkg/installed/x64-linux/lib",
-
-        // Libraries to link
-        "-limgui",
-        "-lSDL3",
-        "-lSDL3_image",
-        "-lGLEW",
-        "-lGL"
-      ],
+      "command": "/usr/bin/g++ -fdiagnostics-color=always -std=c++20 -g -DGLM_ENABLE_EXPERIMENTAL $(find . -name '*.cpp') -o '${fileBasenameNoExtension}.out' -I. -I./includes -I${env:HOME}/vcpkg/installed/x64-linux/include -I${env:HOME}/vcpkg/installed/x64-linux/include/imgui -L${env:HOME}/vcpkg/installed/x64-linux/lib -limgui -lSDL3 -lSDL3_image -lGLEW -lGL",
       "options": {
         "cwd": "${fileDirname}"
       },
@@ -37,7 +13,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "detail": "Compiler task configured for vcpkg libraries"
+      "detail": "Dynamic compiler task for all subprojects"
     }
   ]
 }
